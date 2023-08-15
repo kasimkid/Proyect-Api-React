@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import CardContact from "./CardContact";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
@@ -7,10 +7,9 @@ const Listado = () => {
   const { store, actions } = useContext(Context);
   const contactsList = store.contacts;
   useEffect(() => {
-    actions.obtenerAgenda()
-  }, [])
+    actions.obtenerAgenda();
+  }, []);
 
-  console.log(contactsList);
   return (
     <div className="container">
       <div className="row">
@@ -23,8 +22,12 @@ const Listado = () => {
       <div className="row">
         {contactsList.length > 0
           ? contactsList.map((contact) => (
-            <CardContact key={contact.id} contact={contact} />
-          ))
+              <CardContact
+                key={contact.id}
+                contact={contact}
+  
+              />
+            ))
           : null}
       </div>
     </div>

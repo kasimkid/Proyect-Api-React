@@ -1,7 +1,25 @@
-import React from "react";
+
+import React, { useContext, useState } from "react";
+import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
 
 const CardContact = ({ contact }) => {
-  const { full_name, email, address, phone } = contact;
+  const { full_name, email, address, phone, id } = contact;
+
+  // const editionContact = (contact) => {
+  //   let newContact = contact.map((el) => (contact === contact.id ? contact : el));
+  //   setEditContact(newContact);
+  // };
+
+
+
+  const { store, actions } = useContext(Context);
+
+  const deleteContact = (contact) => {
+    let newListContact = contact.filter((id) => contact.id !== id);
+    setEditContact(newListContact);
+  };
+
   return (
     <div className="col-sm-6 col-md-3 my-2">
       <div className="card">
@@ -13,10 +31,17 @@ const CardContact = ({ contact }) => {
         <div className="card-body">
           <h5 className="card-title">{full_name}</h5>
           <p className="card-text">{email}</p>
-          <p className="card-text"><i className="bi bi-geo-alt"></i>{address}</p>
+          <p className="card-text">
+            <i className="bi bi-geo-alt"></i>
+            {address}
+          </p>
           <p className="card-text">{phone}</p>
-          <button className="btn btn-primary"><i className="bi bi-pencil"></i></button>
-          <button className="btn btn-danger ms-2"><i className="bi bi-trash3-fill"></i></button>
+          <Link to={`/edit-contact-form/${id}`} className="btn btn-primary">
+            <i className="bi bi-pencil"></i>
+          </Link>
+          <button className="btn btn-danger ms-2" onClick={deleteContact}>
+            <i className="bi bi-trash3-fill"></i>
+          </button>
         </div>
       </div>
     </div>

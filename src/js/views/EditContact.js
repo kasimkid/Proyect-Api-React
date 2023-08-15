@@ -1,49 +1,45 @@
 import React, { useContext, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import { Context } from "../store/appContext";
 
-
-
-
 const AddContactForm = () => {
-
-
-
   const { store, actions } = useContext(Context);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
+  const params = useParams()
+  const { id } = params
 
+  useEffect(() => {
+    actions.detailContact(id);
+
+  }, [])
 
   const [addContact, setAddContact] = useState({
     full_name: "",
     email: "",
     phone: "",
     address: "",
-    agenda_slug: "rafael-araujo"
+    agenda_slug: "rafael-araujo",
   });
-  const { full_name, email, phone, address } = addContact
-
+  const { full_name, email, phone, address } = addContact;
 
   const handleChange = (e) => {
-    setAddContact({ ...addContact, [e.target.name]: e.target.value })
+    setAddContact({ ...addContact, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(addContact)
+    console.log(addContact);
     actions.crearContacto(addContact);
     setAddContact({
       full_name: "",
       email: "",
       phone: "",
       address: "",
-
-    })
-    navigate("/")
+    });
+    navigate("/");
   };
-
-
 
   return (
     <>

@@ -7,13 +7,11 @@ const AddContactForm = () => {
   const { store, actions } = useContext(Context);
   const navigate = useNavigate();
 
-  const params = useParams()
-  const { id } = params
+  const params = useParams();
+  const { id } = params;
+  const datos = store.contact;
 
-  useEffect(() => {
-    actions.detailContact(id);
-
-  }, [])
+  console.log(datos);
 
   const [addContact, setAddContact] = useState({
     full_name: "",
@@ -22,31 +20,36 @@ const AddContactForm = () => {
     address: "",
     agenda_slug: "rafael-araujo",
   });
-  const { full_name, email, phone, address } = addContact;
+  const [dataToEdit, setDataToEdit] = useState(datos);
+
+  useEffect(() => {
+    actions.detailContact(id);
+    console.log("SE EJECUTA");
+    console.log("USEEFECT", dataToEdit);
+  }, []);
+
+  const { full_name, email, phone, address } = dataToEdit;
 
   const handleChange = (e) => {
-    setAddContact({ ...addContact, [e.target.name]: e.target.value });
+    setDataToEdit({ ...dataToEdit, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(addContact);
-    actions.crearContacto(addContact);
-    setAddContact({
-      full_name: "",
-      email: "",
-      phone: "",
-      address: "",
-    });
+    actions.editarContacto(id, dataToEdit);
+    await actions.obtenerAgenda();
     navigate("/");
   };
+
+  if (store.cargando) return "cargando...";
 
   return (
     <>
       <div className="row d-flex justify-content-center">
         <div className="col-md-8">
-          <h3 className="text-center">Add a New Contact</h3>
+          <h3 className="text-center">Edit Contact</h3>
           <form onSubmit={handleSubmit}>
+            <p>Full_name: {store.contact.full_name}</p>
             <label htmlFor="Input1" className="form-label">
               Name
             </label>

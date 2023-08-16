@@ -2,7 +2,8 @@ const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
       contacts: [],
-      contact: []
+      contact: "",
+      cargando: false,
     },
     actions: {
       // Use getActions to call a function within a fuction
@@ -22,65 +23,54 @@ const getState = ({ getStore, getActions, setStore }) => {
 
       //Crear Contacto en API
       crearContacto: async (datosContacto) => {
-        const url =
-          "https://playground.4geeks.com/apis/fake/contact/";
-        const request =
-        {
+        datosContacto.agenda_slug = "rafael-araujo";
+        const url = "https://playground.4geeks.com/apis/fake/contact/";
+        const request = {
           method: "POST",
           body: JSON.stringify(datosContacto),
           headers: {
-            "Content-Type": "application/json"
-          }
-        }
+            "Content-Type": "application/json",
+          },
+        };
         try {
           const resp = await fetch(url, request);
           const data = await resp.json();
+          return data;
+        } catch (error) {
+          console.log(error);
         }
-        catch (error) {
-          console.log(error)
-        }
-
       },
 
       //Editar Contacto en API
       editarContacto: async (id, datosContacto) => {
-        const url =
-          `https://playground.4geeks.com/apis/fake/contact/${id}`;
-        const request =
-        {
-          method: "POST",
+        const url = `https://playground.4geeks.com/apis/fake/contact/${id}`;
+        const request = {
+          method: "PUT",
           body: JSON.stringify(datosContacto),
           headers: {
-            "Content-Type": "application/json"
-          }
-        }
+            "Content-Type": "application/json",
+          },
+        };
         try {
           const resp = await fetch(url, request);
           const data = await resp.json();
+        } catch (error) {
+          console.log(error);
         }
-        catch (error) {
-          console.log(error)
-        }
-
       },
-
 
       detailContact: async (id) => {
-        const store = getStore()
-
-        const url =
-          `https://playground.4geeks.com/apis/fake/contact/${id}`;
-        const resp = await fetch(url);
-        const data = await resp.json();
-        setStore({ contact: data });
-        console.log(contact)
-
-
+        setStore({ cargando: true });
+        try {
+          const url = `https://playground.4geeks.com/apis/fake/contact/${id}`;
+          const resp = await fetch(url);
+          const data = await resp.json();
+          setStore({ contact: data[0] });
+          setStore({ cargando: false });
+        } catch (error) {
+          console.log(error);
+        }
       },
-
-
-
-
     },
   };
 };

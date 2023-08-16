@@ -20,15 +20,13 @@ const Listado = () => {
         </div>
       </div>
       <div className="row">
-        {contactsList.length > 0
-          ? contactsList.map((contact) => (
-              <CardContact
-                key={contact.id}
-                contact={contact}
-  
-              />
-            ))
-          : null}
+        {contactsList.length > 0 ? (
+          contactsList.map((contact) => (
+            <CardContact key={contact.id} contact={contact} />
+          ))
+        ) : (
+          <h1>No hay contactos</h1>
+        )}
       </div>
     </div>
   );

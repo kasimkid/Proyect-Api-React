@@ -1,4 +1,3 @@
-
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
@@ -11,8 +10,6 @@ const CardContact = ({ contact }) => {
   //   setEditContact(newContact);
   // };
 
-
-
   const { store, actions } = useContext(Context);
 
   const deleteContact = (contact) => {
@@ -21,7 +18,7 @@ const CardContact = ({ contact }) => {
   };
 
   return (
-    <div className="col-sm-6 col-md-3 my-2">
+    <div className="col-sm-6 col-md-6 col-lg-3 my-2">
       <div className="card">
         <img
           src="https://picsum.photos/id/237/200/200"
@@ -36,8 +33,12 @@ const CardContact = ({ contact }) => {
             {address}
           </p>
           <p className="card-text">{phone}</p>
-          <Link to={`/edit-contact-form/${id}`} className="btn btn-primary">
-            <i className="bi bi-pencil"></i>
+          <Link
+            to={`/detalle-contacto/${id}`}
+            className="btn btn-primary"
+            onClick={() => actions.detailContact(id)}
+          >
+            <i className="bi bi-search"></i>
           </Link>
           <button className="btn btn-danger ms-2" onClick={deleteContact}>
             <i className="bi bi-trash3-fill"></i>

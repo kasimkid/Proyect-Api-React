@@ -32,6 +32,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             "Content-Type": "application/json",
           },
         };
+
         try {
           const resp = await fetch(url, request);
           const data = await resp.json();
@@ -43,6 +44,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
       //Editar Contacto en API
       editarContacto: async (id, datosContacto) => {
+        datosContacto.agenda_slug = "rafael-araujo";
         const url = `https://playground.4geeks.com/apis/fake/contact/${id}`;
         const request = {
           method: "PUT",
@@ -54,6 +56,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         try {
           const resp = await fetch(url, request);
           const data = await resp.json();
+          console.log(data)
         } catch (error) {
           console.log(error);
         }
@@ -67,6 +70,21 @@ const getState = ({ getStore, getActions, setStore }) => {
           const data = await resp.json();
           setStore({ contact: data[0] });
           setStore({ cargando: false });
+        } catch (error) {
+          console.log(error);
+        }
+      },
+      deleteContact: async (id) => {
+        const url = `https://playground.4geeks.com/apis/fake/contact/${id}`;
+        const request = {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        };
+        try {
+          const resp = await fetch(url, request);
+          const data = await resp.json();
         } catch (error) {
           console.log(error);
         }

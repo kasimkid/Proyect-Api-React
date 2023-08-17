@@ -10,7 +10,7 @@ export const DetalleContacto = (props) => {
   useEffect(() => {
     actions.detailContact(params.id);
   }, []);
-  const { full_name } = store.contact;
+  const { full_name, email, phone, address } = store.contact;
 
   if (store.cargando) return "Cargando...";
 
@@ -24,15 +24,13 @@ export const DetalleContacto = (props) => {
           </div>
           <div className="col-md-8">
             <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <p className="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
+              <h3 className="card-title">{full_name}</h3>
+              <p className="card-text">{email}
               </p>
               <p className="card-text">
-                <small className="text-muted">Last updated 3 mins ago</small>
+                <span className="text-muted">{address}</span>
               </p>
+              <p>{phone}</p>
             </div>
           </div>
         </div>

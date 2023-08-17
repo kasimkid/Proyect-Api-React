@@ -1,36 +1,73 @@
-import React, { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
+import Alerta from "./Alerta";
 
 const Formulario = () => {
   const { store, actions } = useContext(Context);
   const navigate = useNavigate();
 
+  const datos = store.contact
+
+  const params = useParams();
+
   const [full_name, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
+  const [alert, setAlert] = useState({});
+
+
+  useEffect(() => {
+    if (params.id) {
+      setFullName(datos.full_name)
+      setEmail(datos.email)
+      setPhone(datos.phone)
+      setAddress(datos.address)
+
+    }
+  }, [params]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if ([full_name, email, phone, address].includes("")) {
       console.log("DATOS OBLIGATORIOS");
+      setAlert({ msg: "Todos los datos son obligatorios", error: true })
       return;
     }
+    setAlert({})
 
-    actions.crearContacto({ full_name, email, phone, address });
-    await actions.obtenerAgenda();
+    if (params.id) {
+      actions.editarContacto(params.id, { full_name, email, phone, address })
+      await actions.obtenerAgenda();
+      setFullName("");
+      setEmail("");
+      setPhone("");
+      setAddress("");
+      navigate("/");
 
-    setFullName("");
-    setEmail("");
-    setPhone("");
-    setAddress("");
-    navigate("/");
+
+    } else {
+      actions.crearContacto({ full_name, email, phone, address });
+      await actions.obtenerAgenda();
+
+      setFullName("");
+      setEmail("");
+      setPhone("");
+      setAddress("");
+      navigate("/");
+
+    }
+
   };
-
+  const { msg } = alert
+  console.log(alert)
   return (
     <div className="col-md-8">
+      {
+        msg && <Alerta alert={alert} />
+      }
       <form onSubmit={handleSubmit}>
         <label htmlFor="Input1" className="form-label">
           Name

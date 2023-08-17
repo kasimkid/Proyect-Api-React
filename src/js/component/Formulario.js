@@ -32,7 +32,6 @@ const Formulario = () => {
     e.preventDefault();
 
     if ([full_name, email, phone, address].includes("")) {
-      console.log("DATOS OBLIGATORIOS");
       setAlert({ msg: "Todos los datos son obligatorios", error: true })
       return;
     }

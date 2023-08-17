@@ -1,3 +1,8 @@
-/* 
-    General Styles
-*/
+body {
+  background-color: rgb(43, 235, 209);
+}
+
+.card {
+  background-color: rgb(229, 244, 248);
+  border: #fff 4px solid;
+}

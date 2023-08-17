@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
-import PropTypes from "prop-types";
+import React, { useEffect, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
@@ -20,17 +19,17 @@ export const DetalleContacto = (props) => {
       <div className="card mb-3">
         <div className="row g-0">
           <div className="col-md-4">
-            <img src="https://picsum.photos/id/237/200/200" alt="..." />
+            <img src="https://picsum.photos/id/237/200/200" className="" alt="..." />
           </div>
           <div className="col-md-8">
             <div className="card-body">
-              <h3 className="card-title">{full_name}</h3>
-              <p className="card-text">{email}
+              <h3 className="card-title fs-1">{full_name}</h3>
+              <p className="card-text fs-4"><i class="bi bi-envelope-fill"></i>  {email}
               </p>
               <p className="card-text">
-                <span className="text-muted">{address}</span>
+                <span className="text-muted fs-4"><i class="bi bi-geo-alt-fill"></i>  {address}</span>
               </p>
-              <p>{phone}</p>
+              <p><i class="bi bi-telephone-fill fs-4"></i>  {phone}</p>
             </div>
           </div>
         </div>
@@ -44,7 +43,3 @@ export const DetalleContacto = (props) => {
     </div>
   );
 };
-
-// Single.propTypes = {
-//   match: PropTypes.object,
-// };

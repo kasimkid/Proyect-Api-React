@@ -22,18 +22,14 @@ const CardContact = ({ contact }) => {
 
   const { store, actions } = useContext(Context);
 
-  // const deleteContact = (id) => {
-  //   let newListContact = store.contacts.filter((contact) => contact.id !== id);
-  // };
-
   return (
     <>
       <ModalConfirm show={show} handleShow={handleShow} handleClose={handleClose} />
       <div className="col-sm-6 col-md-6 col-lg-3 my-2">
         <div className="card">
           <img
-            src="https://picsum.photos/id/237/200/200"
-            className="card-img-top"
+            src="https://i.pinimg.com/1200x/49/c8/e4/49c8e403cd1929e9e7b02126824ff831.jpg"
+            className="card-img-top rounded-circle  p-3"
             alt="..."
           />
           <div className="card-body">

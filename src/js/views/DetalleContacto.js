@@ -6,17 +6,18 @@ export const DetalleContacto = (props) => {
   const { store, actions } = useContext(Context);
   const params = useParams();
 
+  // const { id } = useParams();
+
   useEffect(() => {
     actions.detailContact(params.id);
   }, []);
-  const { full_name, email, phone, address } = store.contact;
 
   if (store.cargando) return "Cargando...";
 
   return (
     <div>
       <h1>Detalle de contacto</h1>
-      <div className="card mb-3">
+      {/* <div className="card mb-3">
         <div className="row g-0">
           <div className="col-md-4">
             <img src="https://picsum.photos/id/237/200/200" className="" alt="..." />
@@ -39,7 +40,7 @@ export const DetalleContacto = (props) => {
       </Link>
       <Link to={`/edit-contact-form/${params.id}`} className="btn btn-primary">
         <i className="bi bi-pencil"></i>
-      </Link>
+      </Link> */}
     </div>
   );
 };

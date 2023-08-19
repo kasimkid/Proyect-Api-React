@@ -5,13 +5,20 @@ export const Navbar = () => {
   return (
     <nav className="navbar navbar-light bg-light mb-3">
       <Link to="/">
-        <span className="navbar-brand mb-0 h1">React Boilerplate</span>
+        <span className="navbar-brand mb-0 h1 ms-3">Api</span>
       </Link>
-      {/* <div className="ml-auto">
+      <div className="ml-auto">
         <Link to="/demo">
-          <button className="btn btn-primary">Add Contact</button>
+          <div class="dropdown">
+            <button class="btn btn-success dropdown-toggle me-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              Favoritos
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+
+            </ul>
+          </div>
         </Link>
-      </div> */}
+      </div>
     </nav>
   );
 };

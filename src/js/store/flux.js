@@ -1,24 +1,34 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
-      contacts: [],
-      contact: "",
+      characters: [],
+      character: "",
+      locations: [],
+      location: "",
       cargando: false,
     },
     actions: {
       // Use getActions to call a function within a fuction
 
-      exampleFunction: () => {
-        getActions().changeColor(0, "green");
-      },
+      // exampleFunction: () => {
+      //   getActions().changeColor(0, "green");
+      // },
 
       // ver contactos de agenda en API
-      obtenerAgenda: async () => {
+      getCharacters: async () => {
         const url =
-          "https://playground.4geeks.com/apis/fake/contact/agenda/rafael-araujo";
+          "https://rickandmortyapi.com/api/character";
         const resp = await fetch(url);
         const data = await resp.json();
-        setStore({ contacts: data });
+        setStore({ characters: data.results });
+      },
+      getLocation: async () => {
+        const url =
+          "https://rickandmortyapi.com/api/location";
+        const resp = await fetch(url);
+        const data = await resp.json();
+        console.log(data)
+        // setStore({ location: data });
       },
 
       //Crear Contacto en API
@@ -65,30 +75,17 @@ const getState = ({ getStore, getActions, setStore }) => {
       detailContact: async (id) => {
         setStore({ cargando: true });
         try {
-          const url = `https://playground.4geeks.com/apis/fake/contact/${id}`;
+          const url = `https://rickandmortyapi.com/api/character/${id}`;
           const resp = await fetch(url);
           const data = await resp.json();
-          setStore({ contact: data[0] });
+          console.log(data)
+          // setStore({ character: data[0] });
           setStore({ cargando: false });
         } catch (error) {
           console.log(error);
         }
       },
-      deleteContact: async (id) => {
-        const url = `https://playground.4geeks.com/apis/fake/contact/${id}`;
-        const request = {
-          method: "DELETE",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        };
-        try {
-          const resp = await fetch(url, request);
-          const data = await resp.json();
-        } catch (error) {
-          console.log(error);
-        }
-      },
+
     },
   };
 };

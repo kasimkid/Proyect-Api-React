@@ -4,11 +4,10 @@ import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
 import { Demo } from "./views/demo";
-import { DetalleContacto } from "./views/DetalleContacto";
+import { DetalleContacto } from "./views/DetailCard";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
-import AddContactForm from "./views/AddContactForm";
 import Listado from "./views/ListadoPersonajes";
 import Location from "./views/Location";
 
@@ -27,6 +26,8 @@ const Layout = () => {
             <Route path="/" element={<Home />} />
             <Route path="/listado-personajes/" element={<Listado />} />
             <Route path="/location" element={<Location />} />
+            <Route path="/detalle-contacto/:id" element={<DetalleContacto />} />
+            {/* {/* <Route path="/location" element={<Location />} /> */}
             <Route path="*" element={<h1>Not found!</h1>} />
           </Routes>
         </ScrollToTop>

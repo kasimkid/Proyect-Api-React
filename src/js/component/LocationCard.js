@@ -2,9 +2,10 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 
 const LocationCard = ({ location }) => {
-  const { name, type, dimension, id } = location;
+  const { name, id } = location;
 
   const { store, actions } = useContext(Context);
+
 
   // useEffect(() => {
   //   actions.getLocation(params.id);
@@ -23,8 +24,6 @@ const LocationCard = ({ location }) => {
             />
             <div className="card-body">
               <h4 className="card-title">{name}</h4>
-              <p>Tipo: {type}</p>
-              <p>Lugar:{dimension}</p>
               {/* <Link to={`/detalle-contacto/${id}`} className="btn btn-primary">
               <i className="bi bi-search"></i>
             </Link> */}

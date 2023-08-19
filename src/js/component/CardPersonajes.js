@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
+
 
 const CardCharacter = ({ character }) => {
   const { name, image, id } = character;
@@ -18,12 +20,12 @@ const CardCharacter = ({ character }) => {
           />
           <div className="card-body">
             <h4 className="card-title">{name}</h4>
-            {/* <Link to={`/detalle-contacto/${id}`} className="btn btn-primary">
+            <Link to={`/detalle-contacto/${id}`} className="btn btn-primary">
               <i className="bi bi-search"></i>
-            </Link> */}
-            {/* <button className="btn btn-danger ms-2">
+            </Link>
+            <button className="btn btn-danger ms-2">
               <i className="bi bi-trash3-fill"></i>
-            </button> */}
+            </button>
           </div>
         </div>
       </div>

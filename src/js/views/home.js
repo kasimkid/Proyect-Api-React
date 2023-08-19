@@ -11,7 +11,6 @@ export const Home = () => (
     <Link to="/location">Localizacion</Link>
     <div className="text-center mt-5">
       <h1 className="">Rick And Morty</h1>
-      <Listado />
     </div>
   </>
 );

@@ -1,10 +1,8 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import { Link } from "react-router-dom";
 
 const CardCharacter = ({ character }) => {
-  const { name, species, image, id } = character;
-  // console.log(character)
+  const { name, image, id } = character;
 
   const { store, actions } = useContext(Context);
 

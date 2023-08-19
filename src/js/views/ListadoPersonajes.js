@@ -1,21 +1,20 @@
-import React, { useContext, useEffect } from "react";
-import { Context } from "../store/appContext";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
 import CardCharacter from "../component/CardPersonajes";
+import { Context } from "../store/appContext";
 
 const Listado = () => {
   const { store, actions } = useContext(Context);
   const charactersList = store.characters;
+  actions.getCharacters();
   // console.log(charactersList)
   // useEffect(() => {
-  //   actions.obtenerAgenda();
+  //   actions.getCharacters();
   // }, []);
 
   return (
     <div className="container">
       <div className="row">
         <div className="col d-flex justify-content-end">
-          <Link></Link>
         </div>
       </div>
       <div className="row">
@@ -24,7 +23,7 @@ const Listado = () => {
             <CardCharacter key={character.id} character={character} />
           ))
         ) : (
-          <h1>No hay contactos</h1>
+          <h1>Vacio</h1>
         )}
       </div>
     </div>

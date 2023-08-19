@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
+import LocationCard from "../component/LocationCard";
 
 export const DetalleContacto = (props) => {
   const { store, actions } = useContext(Context);

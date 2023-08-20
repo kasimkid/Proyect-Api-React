@@ -3,10 +3,10 @@ import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 
-export const DetalleContacto = (character) => {
+export const PersonDetail = () => {
   const { store, actions } = useContext(Context);
 
-  const { name, image, species, type, status, gender } = character;
+  const { name, image, species, type, status, gender } = store.character;
 
 
   const params = useParams();
@@ -28,11 +28,11 @@ export const DetalleContacto = (character) => {
           </div>
           <div className="col-md-8">
             <div className="card-body">
-              <h3 className="card-title">{name}</h3>
-              <p className="card-text">{status}</p>
-              <p className="card-text">{species}</p>
-              <p className="">{type}</p>
-              <p className="">{gender}</p>
+              <h3 className="card-title"> Nombre: {name}</h3>
+              <p className="card-text">Status: {status}</p>
+              <p className="card-text">Especie: {species}</p>
+              <p className="">Tipo: {type}</p>
+              <p className="">Genero: {gender}</p>
             </div>
           </div>
         </div>

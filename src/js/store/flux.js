@@ -76,7 +76,8 @@ const getState = ({ getStore, getActions, setStore }) => {
           const resp = await fetch(url);
           const data = await resp.json();
           console.log(data)
-          setStore({ cargando: false });
+          setStore({ cargando: false })
+          setStore({ character: data })
         } catch (error) {
           console.log(error);
         }

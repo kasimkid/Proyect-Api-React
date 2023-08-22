@@ -26,7 +26,7 @@ const Layout = () => {
             <Route path="/listado-personajes/" element={<Listado />} />
             <Route path="/location" element={<Location />} />
             <Route path="/detalle-contacto/:id" element={<PersonDetail />} />
-            {/* {/* <Route path="/location" element={<Location />} /> */}
+            <Route path="/location" element={<Location />} /> */
             <Route path="*" element={<h1>Not found!</h1>} />
           </Routes>
         </ScrollToTop>

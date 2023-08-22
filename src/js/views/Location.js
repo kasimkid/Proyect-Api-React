@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
-import Card from "../component/Card";
+import CardLocation from "../component/CardLocation";
 
 const Location = () => {
     const { store, actions } = useContext(Context);
@@ -18,11 +18,12 @@ const Location = () => {
             <div className="row">
                 {locationList.length > 0 ? (
                     locationList.map((location) => (
-                        <Card key={location.id} data={location} />
+                        <CardLocation key={location.id} data={location} />
                     ))
                 ) : (
                     <h1>Vacio</h1>
                 )}
+
             </div>
         </div>
     );

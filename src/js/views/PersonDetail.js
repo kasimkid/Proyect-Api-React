@@ -13,7 +13,7 @@ export const PersonDetail = () => {
 
 
   useEffect(() => {
-    actions.detailContact(params.id);
+    actions.detailPerson(params.id);
   }, []);
 
   if (store.cargando) return "Cargando...";

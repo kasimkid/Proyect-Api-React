@@ -9,6 +9,7 @@ import { Navbar } from "./component/navbar";
 import Listado from "./views/ListadoPersonajes";
 import Location from "./views/Location";
 import { PersonDetail } from "./views/PersonDetail";
+import { DetailLocation } from "./views/DetailLocation";
 
 //create your first component
 const Layout = () => {
@@ -25,8 +26,8 @@ const Layout = () => {
             <Route path="/" element={<Home />} />
             <Route path="/listado-personajes/" element={<Listado />} />
             <Route path="/location" element={<Location />} />
-            <Route path="/detalle-contacto/:id" element={<PersonDetail />} />
-            <Route path="/location" element={<Location />} /> */
+            <Route path="/detalle-personaje/:id" element={<PersonDetail />} />
+            <Route path="/detalle-localizacion/:id" element={<DetailLocation />} />
             <Route path="*" element={<h1>Not found!</h1>} />
           </Routes>
         </ScrollToTop>

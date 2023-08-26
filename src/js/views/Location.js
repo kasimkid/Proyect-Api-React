@@ -4,7 +4,7 @@ import CardLocation from "../component/CardLocation";
 
 const Location = () => {
     const { store, actions } = useContext(Context);
-    const locationList = store.location;
+    const locationList = store.locations;
 
     useEffect(() => {
         actions.getLocation();

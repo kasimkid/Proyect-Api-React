@@ -3,11 +3,10 @@ import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 
-export const DetailLocation = ({ location }) => {
+export const DetailLocation = () => {
     const { store, actions } = useContext(Context);
 
-    const { name, type, dimension, id } = location;
-    console.log(location)
+    const { name, type, dimension } = store.location;
 
 
     const params = useParams();
@@ -30,8 +29,8 @@ export const DetailLocation = ({ location }) => {
                     <div className="col-md-8">
                         <div className="card-body">
                             <h3 className="card-title"> Nombre: {name}</h3>
-                            <p className="">Tipo: {type}</p>
-                            <p className="card-text">Status: {dimension}</p>
+                            <p className=""> Tipo: {type}</p>
+                            <p className="card-text"> Dimension: {dimension}</p>
                         </div>
                     </div>
                 </div>

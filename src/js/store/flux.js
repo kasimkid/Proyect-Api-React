@@ -25,7 +25,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           "https://rickandmortyapi.com/api/location";
         const resp = await fetch(url);
         const data = await resp.json();
-        setStore({ location: data.results });
+        setStore({ locations: data.results });
       },
 
       detailPerson: async (id) => {
@@ -40,21 +40,18 @@ const getState = ({ getStore, getActions, setStore }) => {
           console.log(error);
         }
       },
-
       detailLocation: async (id) => {
         setStore({ cargando: true });
         try {
           const url = `https://rickandmortyapi.com/api/location/${id}`;
           const resp = await fetch(url);
           const data = await resp.json();
-          console.log(data)
           setStore({ cargando: false })
           setStore({ location: data })
         } catch (error) {
           console.log(error);
         }
       },
-
     },
   };
 };

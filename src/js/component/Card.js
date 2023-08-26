@@ -17,7 +17,7 @@ const Card = ({ data }) => {
                     />
                     <div className="card-body">
                         <h4 className="card-title">{name}</h4>
-                        <Link to={`/detalle-contacto/${id}`} className="btn btn-primary">
+                        <Link to={`/detalle-personaje/${id}`} className="btn btn-primary">
                             <i className="bi bi-search"></i>
                         </Link>
                         <button><i className="bi bi-star"></i></button>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Favoritos from "./Favoritos";
 
 export const Navbar = () => {
   return (
@@ -31,7 +32,9 @@ export const Navbar = () => {
             <ul
               className="dropdown-menu"
               aria-labelledby="dropdownMenuButton1"
-            ></ul>
+            >
+              {/* <Favoritos /> */}
+            </ul>
           </div>
         </Link>
       </div>

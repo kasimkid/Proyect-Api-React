@@ -13,15 +13,6 @@ const Listado = () => {
         <div className="col d-flex justify-content-end">
         </div>
       </div>
-      {/* <div className="row">
-        {charactersList.length > 0 ? (
-          charactersList.map((character) => (
-            <CardCharacter key={character.id} character={character} />
-          ))
-        ) : (
-          <h1>Vacio</h1>
-        )}
-      </div> */}
       <div className="row">
         {charactersList.length > 0 ? (
           charactersList.map((character) => (

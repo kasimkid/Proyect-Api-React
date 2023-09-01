@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Favoritos from "./Favoritos";
 
 export const Navbar = () => {
   return (
@@ -18,25 +17,26 @@ export const Navbar = () => {
         Localizacion
       </Link>
       <div className="ml-auto">
-        <Link to="/demo">
-          <div className="dropdown">
-            <button
-              className="btn btn-success dropdown-toggle me-3"
-              type="button"
-              id="dropdownMenuButton1"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Favoritos
-            </button>
-            <ul
-              className="dropdown-menu"
-              aria-labelledby="dropdownMenuButton1"
-            >
-              {/* <Favoritos /> */}
-            </ul>
-          </div>
-        </Link>
+
+        <div className="dropdown">
+          <button
+            className="btn btn-success dropdown-toggle me-3"
+            type="button"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Favoritos
+          </button>
+          <ul
+            className="dropdown-menu"
+            aria-labelledby="dropdownMenuButton1"
+          >
+            <li>Test<i className="bi bi-trash2"></i></li>
+
+          </ul>
+        </div>
+
       </div>
     </nav>
   );

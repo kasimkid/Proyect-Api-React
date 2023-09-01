@@ -52,6 +52,13 @@ const getState = ({ getStore, getActions, setStore }) => {
           console.log(error);
         }
       },
+
+      ListFavoritos: () => {
+        const Favorites = []
+        console.log(Favorites, 'test')
+        setStore(Favorites)
+      },
+
     },
   };
 };

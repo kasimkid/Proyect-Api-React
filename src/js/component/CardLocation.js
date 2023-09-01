@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
+
 
 
 const CardLocation = ({ data }) => {
     const { name, id } = data;
+
+    // const [store, actions] = useContext([])
+    // const FavoritesList = store.Favorites;
+
+    const Handleclick = (e) => {
+        console.log(e)
+
+        // actions.ListFavorites()
+    }
 
 
     return (
@@ -21,7 +31,7 @@ const CardLocation = ({ data }) => {
                         <Link to={`/detalle-localizacion/${id}`} className="btn btn-primary">
                             <i className="bi bi-search"></i>
                         </Link>
-                        <button><i className="bi bi-star"></i></button>
+                        <button><i className="bi bi-star" onClick={Handleclick}></i></button>
                     </div>
                 </div>
             </div>

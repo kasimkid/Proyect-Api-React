@@ -21,18 +21,16 @@ export const DetailLocation = () => {
             <div className="card mb-3">
                 <div className="row g-0">
                     <div className="col-md-4">
-                        <img src="" className="" alt="..." />
+                        <img src="https://www.xtrafondos.com/wallpapers/resized/paisaje-de-rick-y-morty-9415.jpg?s=large" width="100%" alt="..." />
                     </div>
                     <div className="col-md-8">
                         <div className="card-body">
                             <h3 className="card-title"> Nombre: {name}</h3>
                             <p className=""> Tipo: {type}</p>
                             <p className="card-text"> Dimension: {dimension}</p>
+                            <button><i class="bi bi-star"></i></button>
+                            <Link to="/location" className="btn btn-danger ms-3 mb-2">Back</Link>
                         </div>
-                        <button>
-                            <i className="bi bi-star"></i>
-                        </button>
-                        <Link to="/location">Back</Link>
                     </div>
                 </div>
             </div>

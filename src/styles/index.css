@@ -1,8 +1,14 @@
 body {
-  background-color: #ccc;
+  background-color: #60a85f;
 }
 .logo {
   width: 50px;
   margin-left: 10px;
   border-radius: 6px;
+}
+
+.pictures {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }

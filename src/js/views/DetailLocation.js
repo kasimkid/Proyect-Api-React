@@ -1,16 +1,13 @@
 import React, { useEffect, useContext } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
-
 
 export const DetailLocation = () => {
     const { store, actions } = useContext(Context);
 
     const { name, type, dimension } = store.location;
 
-
     const params = useParams();
-
 
     useEffect(() => {
         actions.detailLocation(params.id);
@@ -32,6 +29,10 @@ export const DetailLocation = () => {
                             <p className=""> Tipo: {type}</p>
                             <p className="card-text"> Dimension: {dimension}</p>
                         </div>
+                        <button>
+                            <i className="bi bi-star"></i>
+                        </button>
+                        <Link to="/location">Back</Link>
                     </div>
                 </div>
             </div>

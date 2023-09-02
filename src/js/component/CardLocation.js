@@ -9,12 +9,6 @@ const CardLocation = ({ data }) => {
     // const [store, actions] = useContext([])
     // const FavoritesList = store.Favorites;
 
-    const Handleclick = (e) => {
-        console.log(e)
-
-        // actions.ListFavorites()
-    }
-
 
     return (
         <>
@@ -31,7 +25,7 @@ const CardLocation = ({ data }) => {
                         <Link to={`/detalle-localizacion/${id}`} className="btn btn-primary">
                             <i className="bi bi-search"></i>
                         </Link>
-                        <button><i className="bi bi-star" onClick={Handleclick}></i></button>
+
                     </div>
                 </div>
             </div>

@@ -20,7 +20,6 @@ const Card = ({ data }) => {
                         <Link to={`/detalle-personaje/${id}`} className="btn btn-primary">
                             <i className="bi bi-search"></i>
                         </Link>
-                        <button><i className="bi bi-star"></i></button>
                     </div>
                 </div>
             </div>

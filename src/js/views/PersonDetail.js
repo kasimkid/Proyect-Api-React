@@ -1,16 +1,13 @@
 import React, { useEffect, useContext } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
-
 
 export const PersonDetail = () => {
   const { store, actions } = useContext(Context);
 
   const { name, image, species, type, status, gender } = store.character;
 
-
   const params = useParams();
-
 
   useEffect(() => {
     actions.detailPerson(params.id);
@@ -34,6 +31,10 @@ export const PersonDetail = () => {
               <p className="">Tipo: {type}</p>
               <p className="">Genero: {gender}</p>
             </div>
+            <button>
+              <i className="bi bi-star"></i>
+            </button>
+            <Link to="/listado-personajes">Back</Link>
           </div>
         </div>
       </div>

@@ -53,11 +53,13 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
 
-      ListFavoritos: () => {
-        const Favorites = []
-        console.log(Favorites, 'test')
-        setStore(Favorites)
-      },
+
+
+      // ListFavoritos: () => {
+      //   const Favorites = []
+      //   console.log(Favorites, 'test')
+      //   setStore(Favorites)
+      // },
 
     },
   };

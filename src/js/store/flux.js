@@ -5,6 +5,7 @@ const getState = ({ getStore, getActions, setStore }) => {
     store: {
       characters: [],
       locations: [],
+      favoritos: [],
       character: "",
       location: "",
       cargando: false,
@@ -53,7 +54,23 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
 
+      agregarFavoritos: (name) => {
+        const store = getStore()
+        if (store.favoritos.includes(name)) return
+        setStore({ favoritos: [...store.favoritos, name] });
 
+      },
+
+      eliminarFavoritos: (index) => {
+        console.log(index, 'hello')
+        const store = getStore();
+        const Delete = store.favoritos.filter((i) => i !== index)
+
+        setStore({ favoritos: Delete })
+
+
+
+      }
 
       // ListFavoritos: () => {
       //   const Favorites = []

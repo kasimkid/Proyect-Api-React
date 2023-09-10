@@ -31,7 +31,7 @@ export const PersonDetail = () => {
               <p className="">Tipo: {type}</p>
               <p className="">Genero: {gender}</p>
               <button>
-                <i className="bi bi-star"></i>
+                <i className="bi bi-star" onClick={() => actions.agregarFavoritos(name)}></i>
               </button>
               <Link to="/listado-personajes" className="btn btn-danger ms-3">
                 Back

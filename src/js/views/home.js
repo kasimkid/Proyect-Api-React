@@ -7,7 +7,7 @@ export const Home = () => (
   <>
     <div className="text-center mt-5">
       <h1 className="">Rick And Morty</h1>
-      <section className="pictures">
+      <div className="container">
         <div className="picture-1">
           <img
             src="https://www.xtrafondos.com/wallpapers/resized/cabezas-de-rick-and-morty-8452.jpg?s=large"
@@ -21,7 +21,7 @@ export const Home = () => (
             alt="Universo"
           ></img>
         </div>
-      </section>
+      </div>
     </div>
   </>
 );

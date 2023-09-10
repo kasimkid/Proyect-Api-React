@@ -4,8 +4,8 @@ import { Context } from "../store/appContext";
 
 export const DetailLocation = () => {
     const { store, actions } = useContext(Context);
-
     const { name, type, dimension } = store.location;
+
 
     const params = useParams();
 
@@ -28,7 +28,7 @@ export const DetailLocation = () => {
                             <h3 className="card-title"> Nombre: {name}</h3>
                             <p className=""> Tipo: {type}</p>
                             <p className="card-text"> Dimension: {dimension}</p>
-                            <button><i class="bi bi-star"></i></button>
+                            <button><i className="bi bi-star" onClick={() => actions.agregarFavoritos(name)}></i></button>
                             <Link to="/location" className="btn btn-danger ms-3 mb-2">Back</Link>
                         </div>
                     </div>

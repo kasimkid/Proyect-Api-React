@@ -33,7 +33,7 @@ export const Navbar = () => {
           </button>
           <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             {store.favoritos.map((favorito, index) => (
-              <li key={index}>
+              <li key={index} className="text-center">
                 {favorito}
                 <span>
                   <i

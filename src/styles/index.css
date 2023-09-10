@@ -1,14 +1,9 @@
 body {
   background-color: #60a85f;
+  font-family: "Get Schwifty, Wubba Lubba Dub Dub";
 }
 .logo {
   width: 50px;
   margin-left: 10px;
   border-radius: 6px;
-}
-
-.pictures {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
 }

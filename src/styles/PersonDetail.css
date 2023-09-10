@@ -1,0 +1,11 @@
+.star-button {
+  background: #fff;
+  border: none;
+  font-size: 2rem;
+  color: #fd4;
+}
+
+.bi-trash3-fill {
+  color: red;
+  margin-left: 20px;
+}

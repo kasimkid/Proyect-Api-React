@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
+import "../../styles/PersonDetail.css";
 
 export const PersonDetail = () => {
   const { store, actions } = useContext(Context);
@@ -30,7 +31,7 @@ export const PersonDetail = () => {
               <p className="card-text">Especie: {species}</p>
               <p className="">Tipo: {type}</p>
               <p className="">Genero: {gender}</p>
-              <button>
+              <button className="star-button">
                 <i className="bi bi-star" onClick={() => actions.agregarFavoritos(name)}></i>
               </button>
               <Link to="/listado-personajes" className="btn btn-danger ms-3">

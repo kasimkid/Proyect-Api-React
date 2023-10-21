@@ -21,7 +21,7 @@ export const PersonDetail = () => {
       <h1>Reseña</h1>
       <div className="card mb-3">
         <div className="row g-0">
-          <div className="col-md-4">
+          <div className="col-4">
             <img src={image} className="" alt="..." />
           </div>
           <div className="col-sm-4 col-md-8">

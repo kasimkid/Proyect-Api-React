@@ -9,3 +9,6 @@
   color: red;
   margin-left: 20px;
 }
+.card {
+  max-height: 310px;
+}

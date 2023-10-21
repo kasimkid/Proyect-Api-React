@@ -4,7 +4,6 @@ import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
 import injectContext from "./store/appContext";
-
 import { Navbar } from "./component/navbar";
 import Listado from "./views/ListadoPersonajes";
 import Location from "./views/Location";
@@ -18,7 +17,7 @@ const Layout = () => {
   const basename = process.env.BASENAME || "";
 
   return (
-    <div className="container my-5">
+    <div className="container mt-2">
       <BrowserRouter basename={basename}>
         <ScrollToTop>
           <Navbar />

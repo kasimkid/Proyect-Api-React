@@ -6,7 +6,7 @@ export const Navbar = () => {
   const { store, actions } = useContext(Context);
 
   return (
-    <nav className="navbar navbar-light bg-light mb-3">
+    <nav className="container navbar navbar-light bg-light mb-3">
       <Link to="/">
         <img
           src="https://steamuserimages-a.akamaihd.net/ugc/950718995351241361/D107C1962EEE0313BF4F524E5D2854D52701664F/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false"

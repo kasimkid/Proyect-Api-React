@@ -8,10 +8,8 @@ const Listado = () => {
   actions.getCharacters();
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col d-flex justify-content-end">
-        </div>
+    <div className="row">
+      <div className="d-flex justify-content-end">
       </div>
       <div className="row">
         {charactersList.length > 0 ? (
